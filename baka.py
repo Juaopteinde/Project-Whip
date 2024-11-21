@@ -1,0 +1,1 @@
+print('he jua wat heb jij grote zwarte gaten hihihi sterrenkunde reference')
