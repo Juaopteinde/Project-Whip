@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://jik6g3ee6q67"]
 
 [ext_resource type="Texture2D" uid="uid://bp4adureb6igb" path="res://icon.svg" id="1_331tf"]
-[ext_resource type="Script" path="res://movement.gd" id="2_rm5tm"]
+[ext_resource type="Script" path="res://test_script.gd" id="2_rm5tm"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -9,7 +9,3 @@
 position = Vector2(557, 308)
 texture = ExtResource("1_331tf")
 script = ExtResource("2_rm5tm")
-
-[node name="dash_timer" type="Timer" parent="."]
-
-[connection signal="timeout" from="dash_timer" to="Sprite2D" method="_on_dash_timer_timeout"]
