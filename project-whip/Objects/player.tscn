@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://diwmtgvhcim6t"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_dgkgg"]
+[ext_resource type="Texture2D" uid="uid://dl5n2um8naaop" path="res://Assets/cat asset.webp" id="2_dhws5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jfbg7"]
+radius = 35.39
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(587, 381)
+script = ExtResource("1_dgkgg")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_dhws5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jfbg7")
+
+[node name="dash_timer" type="Timer" parent="."]
+wait_time = 0.15
+
+[node name="dash_cooldown" type="Timer" parent="."]
+
+[connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="dash_cooldown" to="." method="_on_dash_cooldown_timeout"]
